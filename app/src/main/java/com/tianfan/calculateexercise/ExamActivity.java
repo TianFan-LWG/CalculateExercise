@@ -80,7 +80,6 @@ public class ExamActivity extends AppCompatActivity {
                 case "混合":
                     break;
             }
-
             Item item = new Item(getApplicationContext(), formula, result, Item.CheckMode.CM_integer);
             linearLayout.addView(item);
         }
