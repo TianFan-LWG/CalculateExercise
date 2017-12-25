@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">算数练习</string>
+    <string name="edtxt_max">输入出题上限值(小于10^9的整数)</string>
+    <string name="btn_enter">出题</string>
+    <string name="btn_preinstall">预设值</string>
+    <string name="btn_submit">提交</string>
+    <string name="editxt_count">出题数量</string>
+    <string name="btn_showResult">查看完整答案</string>
+    <string name="txtv_score">得分：</string>
+    <string name="txtv_progress">进度：</string>
+    <string name="txtv_accuracy">正确率：</string>
+    <string-array name="spr_operationType">
+        <item>混合</item>
+        <item>加法</item>
+        <item>减法</item>
+        <item>乘法</item>
+        <item>除法</item>
+        <item>加减</item>
+        <item>乘除</item>
+    </string-array>
+    <string-array name="spr_operationMode">
+        <item>整数模式</item>
+        <item>小数模式</item>
+    </string-array>
+    <string-array name="spr_negative">
+        <item>正数</item>
+        <item>正负</item>
+    </string-array>
+</resources>
