@@ -4,12 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#d6d2b3"
     tools:context="com.tianfan.calculateexercise.ExamActivity">
-
+    <!--TextView跑马效果：
+    marqueeRepeatLimit：跑马次数（无限）marquee_forever
+    ellipsize：省略效果（跑马）marquee
+    scrollHorizontally：溢出滚动条
+    focusableInTouchMode：触摸可获取焦点
+    focusable：具有焦点
+    -->
     <TextView
         android:id="@+id/txtv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:ellipsize="marquee"
+        android:scrollHorizontally="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:focusable="true"
         android:textSize="18dp" />
 
     <LinearLayout
@@ -24,7 +37,10 @@
         <TextView
             android:id="@+id/txtv_score"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="0"
+            android:textColor="#c21414"/>
         <!--进度-->
         <TextView
             android:layout_width="wrap_content"
@@ -34,7 +50,10 @@
         <TextView
             android:id="@+id/txtv_progress"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="0/0"
+            android:textColor="#3fb30d"/>
         <!--真确率-->
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +63,10 @@
         <TextView
             android:id="@+id/txtv_accuracy"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="0/0"
+            android:textColor="#f48e12"/>
     </LinearLayout>
 
     <LinearLayout
@@ -55,7 +77,8 @@
             android:id="@+id/btn_showResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_showResult" />
+            android:text="@string/btn_showResult"
+            android:onClick="ShowResult" />
 
 
         <Button
@@ -70,7 +93,7 @@
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
+        android:layout_marginHorizontal="10dp"
         android:fillViewport="true">
 
         <ScrollView

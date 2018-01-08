@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
             maxstr=String.valueOf(num);
         }
         String countnum=editxt_count.getText().toString();
-        if(countnum.isEmpty()){
-            countnum="30";
-        }
+
+        //if(countnum.isEmpty()) countnum="30";
+        if(countnum==""||countnum==null)countnum="30";
 
         String[] strarr = new String[]{maxstr,
                 spr_operationType.getSelectedItem().toString(),

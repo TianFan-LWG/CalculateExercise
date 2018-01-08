@@ -8,7 +8,9 @@
     <string name="btn_showResult">查看完整答案</string>
     <string name="txtv_score">得分：</string>
     <string name="txtv_progress">进度：</string>
-    <string name="txtv_accuracy">正确率：</string>
+    <string name="txtv_accuracy">正确比：</string>
+    <string name="txtv_tl">题量：</string>
+
     <string-array name="spr_operationType">
         <item>混合</item>
         <item>加法</item>

@@ -24,7 +24,8 @@ public class Item extends LinearLayout {
     String result = "", validResult;//正确结果
     int dot1 = -1, dot2 = 0;//点标记
     double validResultNum;//完整答案
-
+    boolean isShowResult = false;//已经显示完整答案
+    public boolean getisShowResult(){return isShowResult;}
     public enum CheckMode {
         CM_decimals, CM_integer;
     }
@@ -139,7 +140,9 @@ public class Item extends LinearLayout {
      * @return 判断结果
      */
     public boolean CheckResult(CheckMode mode) {
-        if (result == "") return false;
+        if (result == ""||result==null)return false;
+        if (isShowResult) return false;//如果已经显示了答案就不再判断
+        isShowResult=true;
         setEditTextReadOnly();
         textView3.setText("答案:" + validResult);
         if (result == "0.") result = "0.0";
@@ -188,6 +191,7 @@ public class Item extends LinearLayout {
      */
     public void ShowResult() {
         setEditTextReadOnly();
-        textView3.setText("完整答案：" + String.format("%.f", validResultNum));
+        textView3.setText("完整答案：" + String.format("%f", validResultNum));
+        isShowResult = true;
     }
 }
