@@ -83,8 +83,10 @@ public class Item extends LinearLayout {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                edtxt_result.removeTextChangedListener(this);
                 //限制点的个数
                 SetDot();
+                edtxt_result.addTextChangedListener(this);
             }
 
             @Override
