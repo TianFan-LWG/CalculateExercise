@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -27,6 +29,33 @@ public class MainActivity extends AppCompatActivity {
         spr_operationMode=findViewById(R.id.spr_operationMode);
         editxt_count=findViewById(R.id.editxt_count);
         spr_negative=findViewById(R.id.spr_negative);
+
+        editxt_count.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                editxt_count.removeTextChangedListener(this);//去掉监听
+                CheckCount();
+                editxt_count.addTextChangedListener(this);//恢复监听
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+    }
+    //控制题量最大为100
+    private void CheckCount()
+    {
+        String str=editxt_count.getText().toString();
+        if(str.length()==3){
+            editxt_count.setText("100");
+        }
     }
 
     /**
