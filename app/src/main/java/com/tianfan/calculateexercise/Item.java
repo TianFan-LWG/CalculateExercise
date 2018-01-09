@@ -24,7 +24,7 @@ public class Item extends LinearLayout {
     String result = "", validResult;//正确结果
     int dot1 = -1, dot2 = 0;//点标记
     double validResultNum;//完整答案
-    boolean isShowResult = false;//已经显示完整答案
+    boolean isShowResult = false;//已经显示答案标记
     public boolean getisShowResult(){return isShowResult;}
     public enum CheckMode {
         CM_decimals, CM_integer;

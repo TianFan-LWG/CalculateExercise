@@ -103,6 +103,8 @@ public class ExamActivity extends AppCompatActivity {
      * 生成式子(整数模式)
      */
     private void CreateFormula(int count, int maxnum, String operationMode) {
+        llout_items.removeAllViewsInLayout();
+        List<String> formulalist=new ArrayList<>();
         Random rd = new Random();
         double result = 0, num1 = 0, num2 = 0;//结果 运算数1 运算数2
         String formula = "";//式子
@@ -216,8 +218,15 @@ public class ExamActivity extends AppCompatActivity {
                     }
                     break;
             }
-            Item item = new Item(getApplicationContext(), formula, result, Item.CheckMode.CM_integer);
-            llout_items.addView(item);
+            //如果列表中已经包含式子则重新生成
+            if(formulalist.contains(formula)){
+                i--;
+            }else {
+
+                formulalist.add(formula);
+                Item item = new Item(getApplicationContext(), formula, result, Item.CheckMode.CM_integer);
+                llout_items.addView(item);
+            }
         }
     }
 
@@ -241,7 +250,7 @@ public class ExamActivity extends AppCompatActivity {
     private double[] jiajian(Random rd, int maxnum) {
         double num1 = 0, num2 = 0;
         double sum = rd.nextInt(maxnum + 1);//结果
-        num1 = rd.nextInt((int) sum);//加数1
+        num1 = rd.nextInt((int) sum+1);//加数1
         num2 = sum - num1;//加数2
         return new double[]{num1, num2, sum};
     }
